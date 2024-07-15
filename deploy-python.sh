@@ -46,6 +46,9 @@ echo "Setting up the virtual environment and installing dependencies..."
 python3 -m venv $VENV_DIR
 source $VENV_DIR/bin/activate
 
+# Ref: https://stackoverflow.com/questions/69919970/no-module-named-distutils-but-distutils-installed/76691103#76691103
+pip3 install setuptools
+
 if [ -f "requirements.txt" ]; then
     echo "Installing dependencies from requirements.txt..."
     pip install -r requirements.txt
